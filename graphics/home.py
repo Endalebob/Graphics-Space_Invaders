@@ -28,6 +28,13 @@ class Home(object):
     def update(self):
         pass
 
+class player:
+    playerImg = pygame.image.load('images/photo1.jpeg')
+
+class enemy:
+    enemyImg = pygame.image.load('images/photo2.jpeg')
+
+
     def run(self):
         self.initialize()
         while self.running:
