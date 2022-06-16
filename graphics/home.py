@@ -2,6 +2,26 @@ import pygame
 from graphics.keyboard import KeyBoard
 
 
+
+
+
+class missile:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y        
+
+    playerImg = pygame.image.load('images/photo1.jpeg')
+class enemy:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y        
+
+    enemyImg = pygame.image.load('images/photo2.jpeg')
+class bullet:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y        
+
 class Home(object):
     def __init__(self, sizeOfScreen=None):
         if sizeOfScreen is None:
