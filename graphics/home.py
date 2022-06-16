@@ -1,42 +1,42 @@
 import pygame
+from graphics.keyboard import KeyBoard
 
 
 class Home(object):
-    def __init__(self, screenSize=None):
-        if screenSize is None:
-            screenSize = [600, 600]
+    def __init__(self, sizeOfScreen=None):
+        if sizeOfScreen is None:
+            sizeOfScreen = [600, 600]
         pygame.init()
-        displayFlags = pygame.DOUBLEBUF | pygame.OPENGL
-        # initialize buffers to perform antialiasing
+        display_flags = pygame.DOUBLEBUF | pygame.OPENGL
         pygame.display.gl_set_attribute(
             pygame.GL_MULTISAMPLEBUFFERS, 1)
         pygame.display.gl_set_attribute(
             pygame.GL_MULTISAMPLESAMPLES, 4)
-        # use a core OpenGL profile for cross-platform compatibility
         pygame.display.gl_set_attribute(
             pygame.GL_CONTEXT_PROFILE_MASK,
             pygame.GL_CONTEXT_PROFILE_CORE)
-        self.screen = pygame.display.set_mode(screenSize, displayFlags)
-        pygame.display.set_caption("Graphics Window")
-        self.running = True
+        self.screen = pygame.display.set_mode(sizeOfScreen, display_flags)
+        pygame.display.set_caption("Space Invader")
+        self.running_state = True
         self.clock = pygame.time.Clock()
-        #here next time we include input file
-        self.time = 0
+        self.keyboard = KeyBoard()
+        self.time_pass = 0
 
-    def initialize(self):
+    def init(self):
         pass
-    def update(self):
+
+    def draw(self):
         pass
 
     def run(self):
-        self.initialize()
-        while self.running:
-            self.input.update()
-            if self.input.quit:
-                self.running = False
-            self.deltaTime = self.clock.get_time() / 1000
-            self.time += self.deltaTime
-            self.update()
+        self.init()
+        while self.running_state:
+            self.keyboard.update()
+            if self.keyboard.quit:
+                self.running_state = False
+            self.delta_time = self.clock.get_time() / 1000
+            self.time_pass += self.delta_time
+            self.draw()
             pygame.display.flip()
             self.clock.tick(60)
 
