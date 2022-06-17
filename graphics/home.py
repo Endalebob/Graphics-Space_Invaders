@@ -10,13 +10,13 @@ class missile:
         self.x = x
         self.y = y        
 
-    playerImg = pygame.image.load('images/photo1.jpeg')
+    # playerImg = pygame.image.load('images/photo1.jpeg')
 class enemy:
     def __init__(self, x, y):
         self.x = x
         self.y = y        
 
-    enemyImg = pygame.image.load('images/photo2.jpeg')
+    # enemyImg = pygame.image.load('images/photo2.jpeg')
 class bullet:
         def __init__(self, x, y):
             self.x = x
@@ -25,21 +25,28 @@ class bullet:
 class Home(object):
     def __init__(self, sizeOfScreen=None):
         if sizeOfScreen is None:
-            sizeOfScreen = [600, 600]
+            sizeOfScreen = [800, 700]
+        # pygame.init() initialize all pygame modules
         pygame.init()
+        # used for rendering purpose
         display_flags = pygame.DOUBLEBUF | pygame.OPENGL
+        # initialization of buffer
         pygame.display.gl_set_attribute(
             pygame.GL_MULTISAMPLEBUFFERS, 1)
-        pygame.display.gl_set_attribute(
-            pygame.GL_MULTISAMPLESAMPLES, 4)
+        # for compatablity purpose
+        pygame.display.gl_set_attribute(pygame.GL_MULTISAMPLESAMPLES, 4)
         pygame.display.gl_set_attribute(
             pygame.GL_CONTEXT_PROFILE_MASK,
             pygame.GL_CONTEXT_PROFILE_CORE)
-        self.screen = pygame.display.set_mode(sizeOfScreen, display_flags)
+        # window for display
+        self.window = pygame.display.set_mode(sizeOfScreen, display_flags)
         pygame.display.set_caption("Space Invader")
+        # check the loop is running
         self.running_state = True
+        # used to control time
         self.clock = pygame.time.Clock()
         self.keyboard = KeyBoard()
+        # time passed from the start
         self.time_pass = 0
 
     def init(self):
@@ -50,6 +57,7 @@ class Home(object):
 
     def run(self):
         self.init()
+        # this is running loop
         while self.running_state:
             self.keyboard.update()
             if self.keyboard.quit:
