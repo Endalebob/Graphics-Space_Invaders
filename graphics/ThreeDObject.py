@@ -1,21 +1,28 @@
 from graphics.matrix_file import MatrixFile
 
 
+# in scene graph tree we represent anode using 3D objects
 class Three_D_Object(object):
     def __init__(self):
 
+        # this is a matrix used to store transform data
         self.transform = MatrixFile.make_identity()
+        # it references the prent objects
         self.parent = None
+        # this references child objects
         self.children = []
 
+    # this function used to add a child for the node
     def add(self, child):
         self.children.append(child)
         child.parent = self
 
+    # this function used to remove a child from the node
     def remove(self, child):
         self.children.remove(child)
         child.parent = None
 
+    # used to calculate the transformation of 3D object relative to root scene
     def getWorldMatrix(self):
         if self.parent is None:
             return self.transform
@@ -26,10 +33,11 @@ class Three_D_Object(object):
         descendants = []
         nodesToProcess = [self]
         while len(nodesToProcess) > 0:
-            # remove first node from list
+            # remove the node at index 0
             node = nodesToProcess.pop(0)
-            # add this node to descendant list
+            # add this node to descendants of children
             descendants.append(node)
+            # add children with nodes to process
             nodesToProcess = node.children + nodesToProcess
         return descendants
 

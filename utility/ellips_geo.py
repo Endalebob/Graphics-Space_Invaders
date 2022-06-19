@@ -12,3 +12,35 @@ class EllipsoidGeometryOfObject(ParametricGeometryOfObject):
 
         super().__init__(0, 2 * pi, radius_segments,
                          -pi / 2, pi / 2, height_segments, S)
+
+    def check_error(self):
+        status = ''
+        while self.add_attribute:
+            if self.attributes.keys() != self.attributes.values():
+                print("attribute error")
+                status = "error"
+            else:
+                print("successfully created")
+                status = "success"
+        return status
+
+    def get_status(self):
+        # this function used to tell the status of object
+        status = self.check_error()
+
+        if status == "success":
+            return "success status"
+        else:
+            return "failure status"
+
+    def current_state(self):
+
+        attribute = self.attributes.keys()
+        values = self.attributes.values()
+        len_attributes = self.count_vertices()
+
+        current_state = {}
+        current_state["attributes"] = attribute
+        current_state["values"] = values
+        current_state["attr_len"] = len_attributes
+        return current_state

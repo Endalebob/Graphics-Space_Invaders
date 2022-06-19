@@ -11,6 +11,7 @@ class ObjectRenderer(object):
         glClearColor(clear_color[0], clear_color[1], clear_color[2], 1)
         glEnable(GL_BLEND)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+        self.attributes = {}
 
     def render_object(self, scene, camera):
         glClear(GL_COLOR_BUFFER_BIT |
@@ -19,7 +20,7 @@ class ObjectRenderer(object):
         descendant_list = scene.getDescendantList()
         mesh_filter = lambda x: isinstance(x, MeshObjectObject)
         mesh_list = list(filter(mesh_filter,
-                               descendant_list))
+                                descendant_list))
         for mesh in mesh_list:
             if not mesh.visible:
                 continue
@@ -36,3 +37,32 @@ class ObjectRenderer(object):
             glDrawArrays(mesh.material_object.
                          settings["drawStyle"], 0,
                          mesh.geometrical_shape.vertex_count)
+
+    def check_errors(self):
+        status = ''
+        while self.attributes:
+            if self.attributes.keys() != self.attributes.values():
+                print("attribute error")
+                status = "error"
+            else:
+                print("successfully created")
+                status = "success"
+        return status
+
+    def get_status_of_object(self):
+        # this function used to tell the status of object
+        status = self.check_errors()
+
+        if status == "success":
+            return "success status"
+        else:
+            return "failure status"
+
+    def current_state_of_object(self):
+
+        attribute = self.attributes.keys()
+        values = self.attributes.values()
+        len_attributes = self.attributes.items()
+
+        current_state = {"attributes": attribute, "values": values, "attr_len": len_attributes}
+        return current_state

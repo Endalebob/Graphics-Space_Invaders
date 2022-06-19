@@ -56,3 +56,35 @@ class ParametricGeometryOfObject(GeometryOfObject):
                            colorData)
         self.add_attribute("vec2", "vertexUV", uvData)
         self.count_vertices()
+
+    def check_errors(self):
+        status = ''
+        while self.add_attribute:
+            if self.attributes.keys() != self.attributes.values():
+                print("attribute error")
+                status = "error"
+            else:
+                print("successfully created")
+                status = "success"
+        return status
+
+    def get_status_of_object(self):
+        # this function used to tell the status of object
+        status = self.check_errors()
+
+        if status == "success":
+            return "success status"
+        else:
+            return "failure status"
+
+    def current_state_of_object(self):
+
+        attribute = self.attributes.keys()
+        values = self.attributes.values()
+        len_attributes = self.count_vertices()
+
+        current_state = {}
+        current_state["attributes"] = attribute
+        current_state["values"] = values
+        current_state["attr_len"] = len_attributes
+        return current_state

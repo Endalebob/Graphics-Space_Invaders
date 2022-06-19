@@ -4,6 +4,7 @@ from graphics.unifor_file import UniformProvider
 
 class BasicMaterialOfObjectObject(MaterialOfObject):
     def __init__(self):
+        # this shader are used to render the vertexes
         vertex_shader_code = """
         uniform mat4 projectionMatrix;
         uniform mat4 viewMatrix;
@@ -20,6 +21,7 @@ class BasicMaterialOfObjectObject(MaterialOfObject):
         }
         """
 
+        # this variable used to add color
         fragment_shader_code = """
         uniform vec3 baseColor;
         uniform bool useVertexColors;

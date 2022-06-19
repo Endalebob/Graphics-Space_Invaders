@@ -2,6 +2,9 @@ from graphics.ThreeDObject import Three_D_Object
 from OpenGL.GL import *
 
 
+# this class represent visible object in the scene
+# it uses different data to specifiy an object for v-related data it use
+# geometric data and appearance material data
 class MeshObjectObject(Three_D_Object):
     def __init__(self, geometry, material):
         super().__init__()

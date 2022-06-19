@@ -18,8 +18,8 @@ class Test(Home):
         super().__init__(sizeOfScreen)
         self.current = 0
         self.picture_list = [
-            ["images/sky.webp", "images/grass.jpg"],
             ["images/space1.jpg", "images/space2.jpg"],
+            ["images/sky.webp", "images/grass.jpg"],
             ["images/space6.png", "images/space7.png"],
             ["images/space5.png", "images/space4.jpg"],
             ["images/space8.png", "images/water2.jpeg"],

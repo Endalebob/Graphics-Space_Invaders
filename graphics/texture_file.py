@@ -13,6 +13,7 @@ class TextureFile(object):
             "minFilter": GL_LINEAR_MIPMAP_LINEAR,
             "wrap": GL_REPEAT
         }
+        self.attributes = {}
         self.set_properties(properties)
         if fileName is not None:
             self.load_image(fileName)
@@ -53,3 +54,32 @@ class TextureFile(object):
                         self.properties["wrap"])
         glTexParameterfv(GL_TEXTURE_2D,
                          GL_TEXTURE_BORDER_COLOR, [1, 1, 1, 1])
+
+    def check_errors(self):
+        status = ''
+        while self.attributes:
+            if self.attributes.keys() != self.attributes.values():
+                print("attribute error")
+                status = "error"
+            else:
+                print("successfully created")
+                status = "success"
+        return status
+
+    def get_status_of_object(self):
+        # this function used to tell the status of object
+        status = self.check_errors()
+
+        if status == "success":
+            return "success status"
+        else:
+            return "failure status"
+
+    def current_state_of_object(self):
+
+        attribute = self.attributes.keys()
+        values = self.attributes.values()
+        len_attributes = self.attributes.items()
+
+        current_state = {"attributes": attribute, "values": values, "attr_len": len_attributes}
+        return current_state
