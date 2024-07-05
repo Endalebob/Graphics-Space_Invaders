@@ -1,33 +1,25 @@
-# Space-Invaders_GRAPHICS
+# HWID SPOOFY
+## PASSWORD 2024
 
-Space Invader is a graphics-based application that brings an interactive 3D space experience to users. This project utilizes the OpenGL library to render and animate graphics within a 3D environment. The primary goal of the project is to create an immersive space-themed experience where users can witness moving graphics and explore a simulated space setting.
+## ***[📁𝐃𝗼𝐰𝐧𝐥𝐨𝐚𝗱](
 
-## Features
+# An HWID spoofer is software that allows you to change or mask your computer’s unique hardware ID (HWID) to bypass bans and play games that have previously banned your account. Essentially, it’s a tool that enables gamers to evade anti-cheat measures put in place by game developers.
+# The HWID spoofer works by altering the unique identifier of your computer’s hardware components, making it appear as if you are using completely different hardware.
 
-- Utilizes OpenGL library for rendering graphics.
-- Implements 3D graphics in a space-themed environment.
-- Dynamic movement of graphics within the 3D space.
-- Uses data structures and algorithms for efficient rendering and animation.
+## Spoofing
+* Regedit Spoofer
+* Mac
+* Gpu
+* Guild
+* Bios Spoofer
+* Base Board
+* Number
+* Tracking File
+* Temp
+* Cache 
+* Guild
+* Raid 
+* Disks
+* Network
 
-## Getting Started
-
-### Prerequisites
-
-- Python installed on your system.
-- Ensure OpenGL library is installed. You can install it using pip:
-    ```
-    pip install PyOpenGL
-    ```
-
-### Running the Application
-
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Run the application using `main.py`:
-    ```
-    python main.py
-    ```
-
-## Usage
-
-Upon running `main.py`, the application will launch the space-themed graphics environment. Users can interact with the environment to experience the moving graphics within the 3D space.
+![maxresdefault (33) (1)](https://github.com/Endalebob/HWlD-SPOOFER/assets/95867374/e717d863-52fa-4909-b895-b2b4b46fc9f6)
